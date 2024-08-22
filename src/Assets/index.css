@@ -1,45 +1,75 @@
 body {
-  background-color: #337CCF;
-  overflow: visible;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Cover the entire viewport */
+
+  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+
+  background-image: linear-gradient(93deg, #0f738e75 8%, #71ff0038 64%),
+    linear-gradient(76deg, #476aff6b 16%, #00c4d5c4 66%),
+    radial-gradient(83% 82% at 50% 50%, #3bdd80f0 13%, #0d37ffab 48%),
+    linear-gradient(179deg, #d8fe00ff 17%, #00d8b4ff 98%),
+    radial-gradient(75% 75% at 50% 50%, #073aff6e 1%, #ffe600ff 4%);
+  overflow: hidden;
+  height: 100vh; /* Magic here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-90deg);
+  margin-left: -305px;
+  margin: 0;
+  padding: 0;
 }
 
-.top{
-
- margin-right: 20px;
-  
-}
-.choice{
-  margin-top: -20px;
+.logo {
+  width: 20rem;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 5));
+  padding-bottom: 20px;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+}
+#ccsType {
+  width: 85%;
+  height: 35%;
+  margin-top: 5%;
+  margin-left: 1px;
+}
+#ccsAC {
+  width: 90%;
+  height: 25%;
+  margin-top: 5%;
+  margin-left: 1px;
+}
+.icon {
+  width: 80%;
+  margin-top: -30%;
+  margin-left: -5%;
+}
+.connector {
+  margin: 0 auto;
+  padding: 0 auto;
+  margin-right: 60px;
+
+  width: 930px;
+}
+
+/* must add for title and img */
+.margin {
+  margin-left: 60px;
+}
 .code {
   font-style: italic;
   font-size: 20px;
   font-weight: bold;
-  
 }
-.ccs{
-  margin-top: 32%;
+.ccs {
+  margin-top: 40%;
+  margin-bottom: 20%;
 }
-
-.logo{
-  width: 400px;
-  margin-top: 35%;
-}
-.logo2{
- 
-  margin: auto;
-  
-  width: 200px;
-
-}
-
-.mt{
-  width: 400px;
-  margin-top: 35%;
-}
-
-.btnEx{
+.btnEx {
   margin: auto;
   width: 200px;
   height: 300px;
@@ -48,169 +78,139 @@ body {
   border: 3px solid #ffffff;
   background-color: #337acb;
 }
-h2{
+h2 {
   color: #ffffff;
 }
-h1{
+h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+p {
   color: #ffffff;
 }
 
-p{
+h3 {
   color: #ffffff;
 }
 
-h3{
-  color: #ffffff;
-}
-
-.number{
+.number {
   font-weight: bold;
   border-radius: 100%;
-  background-color: #0c8542;
-  width: 50px;
-  height: 50px;
+  background-color: #ff9800;
+  width: 78px;
+  height: 78px;
   padding: 12px;
-  margin-left: 40%;
+  margin-left: 30%;
   color: #ffffff;
   border: 2px solid #ffffff;
-
- font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-family: "Lucida Sans Regular";
 }
-#ccsType{
-  width: 72%;
-  height: 50%;
-  margin-top: 5%;
-  margin-left: 1px;
+.text {
+  margin-bottom: 20px;
 }
-#ccsAC{
-  width: 75%;
-  height: 36%;
-  margin-top: 5%;
-  margin-left: 1px;
-}
-.icon{
-  width: 90%;
-  margin-top: -30%;
-  margin-left: -5%;
-  
-}
-
-.loading{
-  display: flex;
-  justify-content: center;
-}
-
-#customCard{
+#customCard {
   width: 820px;
   height: 435px;
   background-color: #ffffff;
   border-radius: 10px;
 }
 
-.icon2{
-  width: 60%;
+.icon2 {
+  width: 10rem;
+  height: 5rem;
 }
 
-.btn1{
-  margin-top:-15%;
-  
-  
+.btn1 {
+  margin-top: -50%;
+  margin-bottom: 25%;
 }
-.btn2{
-  margin-top: -12%;
+.btn2 {
+  margin-top: -53%;
+  margin-bottom: 25%;
 }
-.type2{
-  margin-top: 60%;
+.type2 {
+  margin-top: 71%;
   padding-bottom: 10%;
 }
-.icon3{
-  width: 60%;
+.icon3 {
+  width: 80%;
+  height: 27%;
   margin-top: 5%;
   margin-bottom: 2%;
 }
-.chademo{
- margin-top: 65%;
+.chademo {
+  margin-top: 60%;
 }
-.btn3{
-  margin-top: -15%;
+.btn3 {
+  margin-top: -65%;
+  margin-bottom: 25%;
 }
-.gif{
+.gif {
   margin-top: -15%;
-  width: 90%;
+  width: 700px;
 }
 
-#cekImg{
+#cekImg {
   margin-top: -5px;
   padding-left: 60px;
   margin-bottom: 5px;
 }
-.imgCek{
+.imgCek {
   width: 400px;
 }
-
-.btnHome{
+#home {
+  margin-top: 150px;
+}
+.btnHome {
   width: 350px;
   height: 80px;
   margin-top: -11%;
   background-color: #0c8542;
   border-radius: 10px;
- 
+
   border-radius: 9px;
   border: 3px solid #ffffff;
-
-
 }
-.back{
- 
+.back {
   padding-left: 8%;
   color: #ffffff;
   font-size: 25px;
 }
 
-
-
-#homeImg{
- 
+#homeImg {
   padding-left: 65px;
   width: 75px;
   height: 40px;
   padding-top: 5px;
-
 }
-#back{
+#back {
   padding-top: 10px;
-  
- 
 }
 
-
-
-
-.status{
- 
+.status {
   font-size: 30px;
   color: #0c8542;
 }
-.col-2{
+.col-2 {
   display: flex;
   justify-content: center;
 }
-.iconBt{
-
+.iconBt {
   margin-left: -25%;
   margin-top: -9%;
   width: 60%;
 }
 
-.btnFinish{
- 
+.btnFinish {
   background-color: #b81010;
   border-radius: 10px;
- 
+
   border-radius: 9px;
   border: 3px solid #ffffff;
 }
-.chargingS{
+.chargingS {
   width: 750px;
   margin-left: -250px;
   margin-top: -80px;
@@ -218,107 +218,191 @@ h3{
   transform: scaleX(-1);
 }
 
-.data{
+.data {
   padding-top: 35px;
   font-size: 25px;
 }
-.dash{
+.dash {
   margin-left: 80px;
   margin-right: 80px;
   margin-top: -30px;
 }
-.progress{
-  margin: auto;
-}
-.persen{
-  margin-top: -45px;
-  margin-left: -30px;
-  font-size: 30px;
-  color: #000000;
-  font-weight: bold;
 
+.progress {
+  height: 40px;
+  width: 900px;
+  border-radius: 20px;
 }
-.tables{
+.persen {
+  margin-left: -20px;
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  color: #000000db;
+  font-weight: bold;
+}
+.tables {
   align-items: center;
 
   margin-top: 10px;
   margin-bottom: 30px;
-
 }
-.cols{
+.cols {
   margin: auto;
   background-color: #d9d9d9;
-  width: 257px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 200px;
   height: 170px;
   border-radius: 9px;
   text-align: center;
   padding-top: 7px;
   font-size: 30px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- 
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.btnStop{
+.landing {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.btn-landing {
+  width: 50vw;
+}
+.landingImg {
+  width: 500px;
+  height: 600px;
+  padding-bottom: 50px;
+}
+
+.btnStop {
   padding-left: 20px;
   font-size: 28px;
   color: white;
+  margin-top: 15%;
+  margin-bottom: 40%;
 }
-.imgStop{
+.imgStop {
   margin-top: -12px;
 }
 
-.line{
+.line {
   border: 2px solid #0c8542;
   margin-top: -30px;
 }
+#top {
+  margin-top: 160px;
+}
 
-.styleD{
+.styleD {
   font-size: 17px;
   padding-left: 5%;
   color: #0c8542;
   font-weight: bold;
 }
 
-.val{
+.up {
+  font-size: 2rem;
+}
+
+.val {
   background-color: #0c8542;
   border-radius: 5px;
   color: #ffffff;
   width: 150px;
 }
 
-.error{
-  width: 75%;
+.error {
+  width: 25rem;
+  height: 25rem;
   margin-top: 20px;
   margin-bottom: 40px;
 
-  transform:  rotateY('90deg')
+  transform: rotateY("90deg");
 }
 
-.btnfinish{
+.btnfinish {
   margin-top: 50px;
 }
-#btnFinis{
+#btnFinis {
   margin: auto;
   background-color: #b81010;
   justify-content: center;
   height: 70px;
   width: 650px;
   border-radius: 9px;
-  border:  solid #ffffff00;
+  border: solid #ffffff00;
 }
 
-
-.powerUp{
-  width: 480px;
-  margin-left: 30px;
+.powerUp {
+  width: 600px;
+  margin-left: 40px;
 }
 
-.divError{
+.divError {
   filter: brightness(50%);
   filter: contrast(50%);
   filter: drop-shadow(5px 5px 5px #5f17175e);
-  
 }
 
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+.blinking-text {
+  animation: blink 3s infinite; /* Change 1s to control the speed of blinking */
+}
 
+.SimpleKeyboard {
+  margin-top: 40px;
+}
+.inputS {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 65px;
+  padding-top: 1px;
+}
+.inputUser {
+  width: 462px;
+  border-radius: 6px;
+  border: #f8fae5;
+  height: 53px;
+  font-size: 50px;
+}
+.bx {
+  color: #1679ab;
+  font-size: 50px;
+}
+.line {
+  margin-top: 16px;
+  border: none;
+  width: 1px;
+  height: 30px;
+  background-color: #000000db;
+}
+
+.btn-process {
+  background-color: #1679ab;
+  width: 200px;
+  color: #ffffff;
+}
+.btn-cancel {
+  background-color: #b81010;
+  width: 200px;
+  color: #ffffff;
+}
+
+#margin {
+  margin-top: -40px;
+}

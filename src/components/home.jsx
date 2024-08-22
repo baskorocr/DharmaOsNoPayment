@@ -29,64 +29,27 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 1000);
-    const handlePage = (e) => {
-      if (e.ctrlKey) {
-        e.preventDefault();
-      }
-    };
-    window.addEventListener("wheel", handlePage, { passive: false });
+
+    const interval = setInterval(fetchData, 3000);
+    const redirectInterval = setTimeout(() => navigate("/landing"), 60000);
     return () => {
-      clearInterval(interval, window.removeEventListener("wheel", handlePage));
+      clearInterval(interval);
+      clearTimeout(redirectInterval);
     };
   }, []);
 
   //for data update all oulite
   function fetchData() {
+    console.log("Dsad");
     axios
       .get(apiUrl)
       .then((response) => {
-        if (
-          response.data["status"]["ccs"] &&
-          response.data["status"]["ac"] &&
-          response.data["status"]["chademo"]
-        ) {
-          setIsButtonDisabled1(false);
-          setIsButtonDisabled2(false);
-          setIsButtonDisabled3(false);
-        } else if (
-          response.data["status"]["ccs"] &&
-          response.data["status"]["ac"] &&
-          response.data["status"]["chademo"] === false
-        ) {
-          setIsButtonDisabled1(false);
-          setIsButtonDisabled2(false);
-          setIsButtonDisabled3(true);
-        } else if (
-          response.data["status"]["ccs"] &&
-          response.data["status"]["ac"] === false &&
-          response.data["status"]["chademo"]
-        ) {
-          setIsButtonDisabled1(false);
-          setIsButtonDisabled2(true);
-          setIsButtonDisabled3(false);
-        } else if (
-          response.data["status"]["ccs"] === false &&
-          response.data["status"]["ac"] &&
-          response.data["status"]["chademo"]
-        ) {
-          setIsButtonDisabled1(true);
-          setIsButtonDisabled2(false);
-          setIsButtonDisabled3(false);
-        } else if (
-          response.data["status"]["ccs"] === false &&
-          response.data["status"]["ac"] === false &&
-          response.data["status"]["chademo"] === false
-        ) {
-          setIsButtonDisabled1(true);
-          setIsButtonDisabled2(true);
-          setIsButtonDisabled3(true);
-        }
+        const ccs = response.data["status"]["ccs"];
+        const ac = response.data["status"]["ac"];
+        const chademo = response.data["status"]["chademo"];
+        setIsButtonDisabled1(!ccs);
+        setIsButtonDisabled2(!ac);
+        setIsButtonDisabled3(!chademo);
 
         const update = {
           1: response.data["status"]["ccs"],
@@ -101,12 +64,12 @@ function App() {
         // }
       })
       .catch((error) => {
-        setError(error);
+        //setError(error);
       });
 
     controlEme(navigate, sharedVariable); //call function file controlEme
+
     plugCCS();
-    plugAC();
   }
 
   //function check for adaptor AC has connect or not
@@ -168,6 +131,7 @@ function App() {
 
   if (error) {
     // If there's an error, redirect to the error page
+    console.log(error);
     navigate("/error");
   }
 
@@ -175,7 +139,7 @@ function App() {
   const ClickButton1 = () => {
     if (plug1 === 1) {
       dispatch(setSharedVariable("ccs"));
-      Auth();
+      navigate("/code");
     } else {
       dispatch(setSharedVariable("ccs"));
       navigate("/cek");
@@ -184,7 +148,7 @@ function App() {
   const ClickButton2 = () => {
     if (plug2 === 2) {
       dispatch(setSharedVariable("ac"));
-      Auth();
+      navigate("/code");
     } else {
       dispatch(setSharedVariable("ac"));
       navigate("/cek");
@@ -193,7 +157,7 @@ function App() {
   const ClickButton3 = () => {
     if (plug3 === 3) {
       dispatch(setSharedVariable("chademo"));
-      Auth();
+      navigate("/code");
     } else {
       dispatch(setSharedVariable("chademo"));
       navigate("/cek");
@@ -204,45 +168,45 @@ function App() {
 
   const btn = {
     margin: "auto",
-    width: "260px",
-    height: "470px",
+    width: "230px",
+    height: "660px",
     marginTop: "10%",
     borderRadius: "30px",
     border: "3px solid #ffffff",
-    backgroundColor: "#337CCF",
+    backgroundColor: "#476aff6b",
   };
   const btn1Connect = {
     margin: "auto",
-    width: "260px",
-    height: "470px",
+    width: "230px",
+    height: "660px",
     marginTop: "10%",
     borderRadius: "30px",
-    border: "3px solid #0c8542",
-    backgroundColor: "#337CCF",
+    border: "3px solid #FF9800",
+    backgroundColor: "#27E1C1",
   };
   const btn2Connect = {
     margin: "auto",
-    width: "260px",
-    height: "470px",
+    width: "230px",
+    height: "660px",
     marginTop: "10%",
     borderRadius: "30px",
-    border: "3px solid #0c8542",
-    backgroundColor: "#337CCF",
+    border: "3px solid #FF9800",
+    backgroundColor: "#27E1C1",
   };
   const btn3Connect = {
     margin: "auto",
-    width: "260px",
-    height: "470px",
+    width: "230px",
+    height: "660px",
     marginTop: "10%",
     borderRadius: "30px",
-    border: "3px solid #0c8542",
-    backgroundColor: "#337CCF",
+    border: "3px solid #FF9800",
+    backgroundColor: "#27E1C1",
   };
 
   const notVailable = {
     margin: "auto",
-    width: "260px",
-    height: "470px",
+    width: "230px",
+    height: "660px",
     marginTop: "10%",
     borderRadius: "30px",
     border: "3px solid #ffffff",
@@ -250,19 +214,23 @@ function App() {
   };
 
   return (
-    <div className="animate__animated animate__fadeIn top ">
-      <img
-        className={"logo2 d-flex justify-content-center mt-4"}
-        src={require("../Assets/img/logo.png")}
-        alt=""
-      />
+    <div className="animate__animated animate__fadeIn me-5" id="margin">
+      <div className={"margin d-flex justify-content-center "} id={"home"}>
+        <img
+          className={"logo"}
+          src={require("../Assets/img/logo.png")}
+          alt=""
+        />
+      </div>
 
-      <h1 className={"d-flex justify-content-center "}>Charging Station</h1>
+      <h1 className={"margin d-flex justify-content-center mb-2"}>
+        CHARGING STATION
+      </h1>
       <br />
-      <div className={"row gx-5 choice"}>
-        <div className={"col-4 "}>
+      <div className={"connector justify-content-center text-center row  mt-5"}>
+        <div className={"col-lg-3 mb-3"} hidden={isButtonDisabled1}>
           <button
-            className={"me-5 ms-5"}
+            className={"ms-5 me-5"}
             style={
               data[1] === true ? (plug1 === 1 ? btn1Connect : btn) : notVailable
             }
@@ -271,7 +239,7 @@ function App() {
           >
             <div className={"number btn1"}>1</div>
             <br />
-            <h3 className={"text"}>CCS2</h3>
+            <h3 className={"text"}>CCS</h3>
 
             <img
               id="ccsType"
@@ -287,8 +255,8 @@ function App() {
               <p className={"code ccs"}>Available</p>
             )}
           </button>
-        </div>
-        <div className={"col-4"}>
+        </div>{" "}
+        <div className={"col-lg-3 mb-3"} hidden={isButtonDisabled2}>
           <button
             className={"ms-5 me-5"}
             style={
@@ -315,7 +283,7 @@ function App() {
             )}
           </button>
         </div>
-        <div className={"col-4"}>
+        <div className={"col-lg-4 mb-3"} hidden={isButtonDisabled3}>
           <button
             className={"ms-5 me-5"}
             style={
@@ -341,19 +309,20 @@ function App() {
           </button>
         </div>
       </div>
-      <br />
-      {plug1 === 1 && (
-        <h3 className={"d-flex justify-content-center mt-1 ms-3"}>
-          {" "}
-          CCS Has Been Connected{" "}
-        </h3>
-      )}
-      {plug2 === 2 && (
-        <h3 className={"d-flex justify-content-center mt-1 ms-3"}>
-          {" "}
-          AC Has Been Connected
-        </h3>
-      )}
+      <div className="row mb-5 mt-5">
+        {plug1 === 1 && (
+          <h3 className={"d-flex justify-content-center mt-4 ms-3"}>
+            {" "}
+            CCS Has Been Connected{" "}
+          </h3>
+        )}
+        {plug2 === 2 && (
+          <h3 className={"d-flex justify-content-center mt-4 ms-3"}>
+            {" "}
+            AC Has Been Connected
+          </h3>
+        )}
+      </div>
     </div>
   );
 }
