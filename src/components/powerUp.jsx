@@ -62,28 +62,29 @@ function App() {
   }
 
   return (
-    <div className="powerUp animate__animated animate__fadeIn top " id="margin">
-      <div className={"margin d-flex justify-content-center mt-5"}>
+    <div className="powerUp animate__animated animate__fadeIn" id="margin">
+      <div className="d-flex justify-content-center">
         <img
           className={"logo"}
           src={require("../Assets/img/logo.png")}
           alt=""
         />
       </div>
+      <div className="d-flex justify-content-center">
+        <h1 className="d-flex justify-content-center mt-5 mb-5 me-xl-3">
+          Power Up Machine
+        </h1>
+      </div>
 
-      <h1 className={"d-flex justify-content-center mt-5 mb-5 ms-5"}>
-        Power Up Machine
-      </h1>
-      <br />
-      <div className={"d-flex justify-content-center"}>
+      <div className="d-flex justify-content-center mt-4">
         <img
           src={require("../Assets/img/powerUp.gif")}
-          className={"powerUp"}
+          className="powerUp"
           alt=""
         />
       </div>
-      <br />
-      <h1 className={"d-flex justify-content-center mt-5 up blinking-text"}>
+
+      <h1 className="d-flex justify-content-center mt-5 up blinking-text">
         {text}
       </h1>
     </div>
