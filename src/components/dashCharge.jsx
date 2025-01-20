@@ -46,7 +46,7 @@ function App() {
       if (jsonData["pilot"] === 7) {
         controlEme(navigate, sharedVariable);
       }
-      if (jsonData["phs"] === 8) {
+      if (jsonData["phs"] === 1) {
         navigate("/home");
       }
     };
@@ -125,7 +125,7 @@ function App() {
             {" "}
             <div className="cols">
               <div>Current</div>
-              <div className="data">{data["evsemaxc"]} A</div>
+              <div className="data">{data["pc"]} A</div>
             </div>
           </div>
           <div className="col-4">
